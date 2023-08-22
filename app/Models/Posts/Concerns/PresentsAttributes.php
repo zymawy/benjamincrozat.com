@@ -38,14 +38,14 @@ trait PresentsAttributes
     public function lastUpdate() : Attribute
     {
         return Attribute::make(
-            fn () => ($this->updated_at ?? $this->created)->toDateTimeString()
+            fn () => ($this->modified_at ?? $this->created_at)->toDateTimeString()
         )->shouldCache();
     }
 
     public function renderedLastUpdate() : Attribute
     {
         return Attribute::make(
-            fn () => ($this->updated_at ?? $this->created)->isoFormat('LL')
+            fn () => ($this->modified_at ?? $this->created_at)->isoFormat('LL')
         )->shouldCache();
     }
 

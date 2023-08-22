@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
 
         // Marxdown is a named I invented for Markdown with extra features.
         Stringable::macro(
-            'marxdown', fn () => (new MarxdownConverter(torchlight: true))->convert($this->value)
+            'marxdown', fn () => (new MarxdownConverter(torchlight: false))->convert($this->value)
         );
 
         Stringable::macro('htmlEntityDecode', function () {
